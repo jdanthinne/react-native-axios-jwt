@@ -56,7 +56,7 @@ export const setAuthTokens = (tokens: AuthTokens): Promise<void> => {
 export const setAccessToken = async (token: Token): Promise<void> => {
   const refreshToken = await getRefreshToken()
   if (!refreshToken || !accessToken) {
-    throw new Error('Unable to update access token since there are not tokens currently stored')
+    // throw new Error('Unable to update access token since there are not tokens currently stored')
   }
 
   accessToken = token
