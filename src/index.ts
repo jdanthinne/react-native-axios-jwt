@@ -35,7 +35,7 @@ export const isLoggedIn = async (): Promise<boolean> => {
  */
 export const setAuthTokens = (tokens: AuthTokens): Promise<void> => {
   // store accesToken in memory
-  setAccessToken(tokens.accessToken)
+  accessToken = tokens.accessToken
 
   // store refreshToken securely
   return Keychain.setGenericPassword('refreshToken', tokens.refreshToken, { service: STORAGE_KEY })
