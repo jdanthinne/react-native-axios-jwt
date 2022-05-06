@@ -93,7 +93,7 @@ exports.isLoggedIn = isLoggedIn;
  */
 var setAuthTokens = function (tokens) {
     // store accesToken in memory
-    (0, exports.setAccessToken)(tokens.accessToken);
+    accessToken = tokens.accessToken;
     // store refreshToken securely
     return Keychain.setGenericPassword('refreshToken', tokens.refreshToken, { service: exports.STORAGE_KEY })
         .then(function (result) {
